@@ -9,9 +9,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: lightTheme,
+    return ItaliaTheme(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        home: HomePage(),
+      ),
     );
   }
 }
@@ -24,8 +26,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Italia UI Kit Flutter port"),
       ),
-      body: Center(
-        child: ItaliaButton.small(child: Text("Lorem ipsum dolor sit al"),)
+      body: Builder(
+        builder: (context) => Center(
+          child: ItaliaButton.small(
+            child: Text("Lorem ipsum dolor sit al"),
+            onTap: () => Scaffold.of(context)..hideCurrentSnackBar()..showSnackBar(SnackBar(content: Text("ItaliaButton has been tapped"))),
+          )
+        ),
       ),
     );
   }

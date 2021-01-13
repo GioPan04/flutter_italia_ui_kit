@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:italia_ui_kit/src/themes/ItaliaThemeData.dart';
 
 const int _defaultLightColor = 0xFF0066CC;
 
@@ -22,3 +23,8 @@ const MaterialColor primaryLightColor = MaterialColor(
 ThemeData lightTheme = ThemeData(
   primarySwatch: primaryLightColor
 );
+
+
+class ItaliaLightThemeData extends ItaliaThemeData {
+  final Color primaryButtonColor = Color(0xFF0073E6); 
+}
